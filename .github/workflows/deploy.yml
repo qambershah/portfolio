@@ -1,0 +1,33 @@
+name: Deploy Blazor WASM to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: ⬇ Checkout repo
+        uses: actions/checkout@v4
+
+      - name: ⚙️ Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.x'
+
+      - name: 📦 Publish Blazor WebAssembly app
+        run: dotnet publish ./portfolio.Client/portfolio.Client.csproj -c Release -o build --nologo
+
+      - name: 🛠 Add 404.html for GitHub Pages SPA fallback
+        run: cp build/wwwroot/index.html build/wwwroot/404.html
+
+      - name: 🚀 Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build/wwwroot
