@@ -5,10 +5,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio</title>
+    <!-- change this for prod/github pages-->
     <base href="/portfolio/" />
-    <link rel="stylesheet" href="bootstrap/bootstrap.min.css" />
-    <link rel="stylesheet" href="css/app.css" />
-    <link rel="icon" type="image/png" href="favicon.png" />
+    <!--<base href="/" />-->
+    <link href="bootstrap/bootstrap.min.css" rel="stylesheet"/>
+    <link href="css/app.css" rel="stylesheet"/>
+    <link rel="icon" type="image/png" href="images/logo.PNG" />
     <link href="_content/MudBlazor/MudBlazor.min.css" rel="stylesheet" />
 </head>
 <body>
@@ -16,7 +18,78 @@
         <strong>This site requires JavaScript to run. Please enable it in your browser.</strong>
     </noscript>
 
-    <div id="app">Loading...</div>
+    <div id="app">
+        <style>
+            html, body {
+                margin: 0;
+                height: 100%;
+                background-color: #0d1117;
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            #loading-wrapper {
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .spinner-container {
+                position: relative;
+                width: 100px;
+                height: 100px;
+                margin-bottom: 1rem;
+            }
+
+            #loading-logo {
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                object-fit: cover;
+                z-index: 2;
+            }
+
+            .spinner-ring {
+                width: 100px;
+                height: 100px;
+                border: 6px solid rgba(255, 255, 255, 0.15);
+                border-top-color: #ffffff;
+                border-radius: 50%;
+                animation: spin 1s linear infinite;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 1;
+            }
+
+            #loading-text {
+                color: #c9d1d9;
+                font-size: 1rem;
+            }
+
+            @keyframes spin {
+                to {
+                    transform: rotate(360deg);
+                }
+            }
+        </style>
+
+        <div id="loading-wrapper">
+            <div class="spinner-container">
+                <div class="spinner-ring"></div>
+                <img id="loading-logo" src="images/logo.PNG" alt="Logo" />
+            </div>
+            <div id="loading-text">Loading...</div>
+        </div>
+    </div>
+
     <script src="_framework/blazor.webassembly.js"></script>
     <script src="_content/MudBlazor/MudBlazor.min.js"></script>
 </body>

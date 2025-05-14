@@ -1,0 +1,9 @@
+﻿[
+    {
+        "title": "Portfolio Site",
+        "description": "Blazor WASM portfolio powered by MudBlazor, GitHub Pages, and CI/CD pipeline.",
+        "technologies": [ "Blazor", ".NET 8", "MudBlazor", "GitHub Actions" ],
+        "link": "https://qambershah.github.io/portfolio",
+        "github": "https://github.com/qambershah/portfolio"
+    }
+]
