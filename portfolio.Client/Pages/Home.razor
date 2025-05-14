@@ -1,59 +1,55 @@
 ﻿@page "/"
+<PageTitle>Welcome</PageTitle>
 
-<PageTitle>Home</PageTitle>
+<MudContainer MaxWidth="MaxWidth.Large" Class="mt-6">
 
-<MudText Typo="Typo.h3" GutterBottom="true">Hello, world!</MudText>
-<MudText Class="mb-8">Welcome to your new app, powered by MudBlazor and the .NET 8 Template!</MudText>
+    <!-- Profile Section -->
+    <MudPaper Elevation="1" Class="pa-6 d-flex flex-column align-items-start mb-6">
 
-<MudAlert Severity="Severity.Normal" ContentAlignment="HorizontalAlignment.Start">
-    You can find documentation and examples on our website here:
-    <MudLink Href="https://mudblazor.com" Target="_blank" Typo="Typo.body2" Color="Color.Primary">
-        <b>www.mudblazor.com</b>
-    </MudLink>
-</MudAlert>
+        <MudStack Row="true" AlignItems="AlignItems.Center" Spacing="2" Class="mb-4">
+            <MudAvatar Size="Size.Large">
+                <MudImage Src="images/avatar.jpg" Alt="An image of my avatar!"></MudImage>
+            </MudAvatar>
 
-<br />
-<MudText Typo="Typo.h5" GutterBottom="true">Interactivity in this Template</MudText>
-<br />
-<MudText Typo="Typo.body2">
-    When you opt for the "Global" Interactivity Location, <br />
-    the render modes are defined in App.razor and consequently apply to all child components.<br />
-    In this case, providers are globally set in the MainLayout.<br />
-    <br />
-    On the other hand, if you choose the "Per page/component" Interactivity Location,<br />
-    it is necessary to include the <br />
-    <br />
-    &lt;MudPopoverProvider /&gt; <br />
-    &lt;MudDialogProvider /&gt; <br />
-    &lt;MudSnackbarProvider /&gt; <br />
-    <br />
-    components on every interactive page.<br />
-    <br />
-    If a render mode is not specified for a page, it defaults to Server-Side Rendering (SSR),<br />
-    similar to this page. While MudBlazor allows pages to be rendered in SSR,<br />
-    please note that interactive features, such as buttons and dropdown menus, will not be functional.
-</MudText>
+            <MudStack Spacing="1">
+                <MudText Typo="Typo.h4">Qamber Abbas</MudText>
+                <MudText Typo="Typo.subtitle2" Class="text-muted">Fullstack Developer</MudText>
+            </MudStack>
+        </MudStack>
 
-<br />
-<MudText Typo="Typo.h5" GutterBottom="true">What's New in Blazor with the Release of .NET 9</MudText>
-<br />
+        <MudText Typo="Typo.body1" Class="mb-3">
+            👋 Welcome to my personal portfolio! I'm a full-stack developer passionate about creating thoughtful, reliable software that solves real-world problems. I care deeply about delivering value through practical and maintainable solutions.
+        </MudText>
 
-<MudText Typo="Typo.h6" GutterBottom="true">Prerendering</MudText>
-<MudText Typo="Typo.body2" GutterBottom="true">
-    If you're exploring the features of .NET 9 Blazor,<br /> you might be pleasantly surprised to learn that each page is prerendered on the server,<br /> regardless of the selected render mode.<br /><br />
-    This means that you'll need to inject all necessary services on the server,<br /> even when opting for the wasm (WebAssembly) render mode.<br /><br />
-    This prerendering functionality is crucial to ensuring that WebAssembly mode feels fast and responsive,<br /> especially when it comes to initial page load times.<br /><br />
-    For more information on how to detect prerendering and leverage the RenderContext, you can refer to the following link:
-    <MudLink Href="https://github.com/dotnet/aspnetcore/issues/51468#issuecomment-1783568121" Target="_blank" Typo="Typo.body2" Color="Color.Primary">
-        More details
-    </MudLink>
-</MudText>
+        <MudText Typo="Typo.body1" Class="mb-3">
+            This site serves as both a showcase of my work and a space where I continue to learn, build, and refine ideas. It evolves alongside my experience, with new features and experiments added regularly as part of ongoing professional development.
+        </MudText>
 
-<br />
-<MudText Typo="Typo.h6" GutterBottom="true">InteractiveAuto</MudText>
-<MudText Typo="Typo.body2">
-    A discussion on how to achieve this can be found here:
-    <MudLink Href="https://github.com/dotnet/aspnetcore/issues/51468#issue-1950424116" Target="_blank" Typo="Typo.body2" Color="Color.Primary">
-        More details
-    </MudLink>
-</MudText>
+        <MudAlert Severity="Severity.Normal" Variant="Variant.Outlined" Dense="true" Class="mb-4">
+            🚧 <strong>Under construction:</strong> Pages and features are being added iteratively. Feel free to explore the <MudLink Color="Color.Primary" Href="/portfolio/projects">Projects</MudLink> section.
+        </MudAlert>
+
+        <!-- Contact Buttons -->
+        <MudStack Row="true" Spacing="2" Class="mb-2">
+            <MudButton Variant="Variant.Outlined" Color="Color.Primary" StartIcon="@Icons.Material.Filled.Email" Href="mailto:qamber9abbas@gmail.com" Target="_blank">
+                Email Me
+            </MudButton>
+            <MudButton Variant="Variant.Outlined" Color="Color.Secondary" StartIcon="@Icons.Custom.Brands.GitHub" Href="https://github.com/qambershah" Target="_blank">
+                GitHub
+            </MudButton>
+            <MudButton Variant="Variant.Outlined" Color="Color.Info" StartIcon="@Icons.Custom.Brands.LinkedIn" Href="https://linkedin.com/in/qamber9abbas" Target="_blank">
+                LinkedIn
+            </MudButton>
+        </MudStack>
+
+        @* <MudButton Variant="Variant.Filled" Color="Color.Success" Href="files/QamberShah_Resume.pdf" Target="_blank" StartIcon="@Icons.Material.Filled.Download">
+            Download Resume
+        </MudButton> *@
+    </MudPaper>
+
+    <!-- Footer -->
+    <MudText Typo="Typo.caption" Class="text-muted mt-4">
+        💡 Built with Blazor WebAssembly + MudBlazor, powered by GitHub Actions and deployed on GitHub Pages.
+    </MudText>
+
+</MudContainer>

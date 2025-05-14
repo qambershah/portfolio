@@ -1,0 +1,46 @@
+﻿@page "/projects"
+@inject HttpClient Http
+
+<PageTitle>Projects</PageTitle>
+
+<MudContainer MaxWidth="MaxWidth.Large">
+    <MudText Typo="Typo.h4" Class="mt-2" GutterBottom="true">Projects</MudText>
+
+    @if (projects == null)
+    {
+        <MudProgressCircular Indeterminate="true" />
+    }
+    else
+    {
+        <MudGrid Class="mt-4">
+            @foreach (var project in projects)
+            {
+                <MudItem xs="12" sm="6" md="4">
+                    <RepoCard Title="@project.Title"
+                              Description="@project.Description"
+                              Technologies="@project.Technologies"
+                              Link="@project.Link"
+                              Github="@project.Github" />
+                </MudItem>
+            }
+        </MudGrid>
+    }
+</MudContainer>
+
+@code {
+    private List<ProjectModel> projects;
+
+    protected override async Task OnInitializedAsync()
+    {
+        projects = await Http.GetFromJsonAsync<List<ProjectModel>>("data/projects.json");
+    }
+
+    public class ProjectModel
+    {
+        public string Title { get; set; }
+        public string Description { get; set; }
+        public List<string> Technologies { get; set; }
+        public string Link { get; set; }
+        public string Github { get; set; }
+    }
+}

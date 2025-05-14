@@ -1,43 +1,16 @@
-﻿<div class="top-row ps-3 navbar navbar-dark">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="">portfolio</a>
-    </div>
-</div>
+﻿<MudDrawerHeader Class="d-flex justify-content-center px-0 py-4">
+    <MudAvatar Rounded="true" Style="width: 128px; height: 128px;">
+        <MudImage Src="images/avatar.jpg" Alt="Avatar of Qamber Abbas" />
+    </MudAvatar>
+</MudDrawerHeader>
 
-<MudDrawer @bind-Open="_drawerOpen" Anchor="Anchor.Left" Elevation="2" Variant="DrawerVariant.Responsive" Class="mud-theme-dark">
-    <MudDrawerHeader>
-        <MudText Typo="Typo.h6">portfolio</MudText>
-    </MudDrawerHeader>
 
-    <MudNavMenu>
-        <MudNavLink Href="" Match="NavLinkMatch.All" Icon="@Icons.Material.Filled.Home">Home</MudNavLink>
-        <MudNavLink Href="counter" Icon="@Icons.Material.Filled.ExposurePlus1">Counter</MudNavLink>
-        <MudNavLink Href="weather" Icon="@Icons.Material.Filled.Cloud">Weather</MudNavLink>
-    </MudNavMenu>
-</MudDrawer>
+<MudNavMenu Dense="true">
+    <MudNavLink Href="" Match="NavLinkMatch.All" Icon="@Icons.Material.Filled.Home" Class="mud-nav-link">
+        Home
+    </MudNavLink>
+    <MudNavLink Href="projects" Icon="@Icons.Material.Filled.Work" Class="mud-nav-link">
+        Projects
+    </MudNavLink>
+</MudNavMenu>
 
-<div class="nav-scrollable" onclick="document.querySelector('.navbar-toggler').click()">
-    <nav class="flex-column">
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
-                <span class="bi bi-house-door-fill-nav-menu" aria-hidden="true"></span> Home
-            </NavLink>
-        </div>
-
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="counter">
-                <span class="bi bi-plus-square-fill-nav-menu" aria-hidden="true"></span> Counter
-            </NavLink>
-        </div>
-
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="weather">
-                <span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> Weather
-            </NavLink>
-        </div>
-    </nav>
-</div>
-
-@code {
-    private bool _drawerOpen = true;
-}
