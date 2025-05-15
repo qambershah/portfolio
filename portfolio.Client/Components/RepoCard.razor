@@ -6,7 +6,7 @@
 
     <div>
 
-        @if (!string.IsNullOrWhiteSpace(Github))
+        @if (!string.IsNullOrWhiteSpace(@Github))
         {
             <MudDivider Class="my-2" />
             <MudChip T="string" Href="@Github" Target="_blank" Icon="@Icons.Custom.Brands.GitHub" Color="Color.Primary">
@@ -14,14 +14,23 @@
             </MudChip>
         }
 
+        @if (!string.IsNullOrWhiteSpace(@Link))
+        {
+            <MudChip T="string" Href="@Link" Target="_blank" Icon="@Icons.Material.Filled.Public" Color="Color.Primary">
+                Live Demo
+            </MudChip>
+        }
+
         <MudDivider Class="my-2" />
 
-        <MudChipSet T="string" Class="d-flex flex-wrap gap-1">
+        <div class="d-flex flex-wrap gap-1 mt-2">
             @foreach (var tech in Technologies)
             {
-                <MudChip T="string" Color="Color.Dark">@tech</MudChip>
+                <MudChip T="string" Color="Color.Dark" DisableRipple="true" Variant="Variant.Filled">
+                    @tech
+                </MudChip>
             }
-        </MudChipSet>
+        </div>
     </div>
 </MudPaper>
 

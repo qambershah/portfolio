@@ -3,7 +3,14 @@
         "title": "Portfolio Site",
         "description": "Blazor WASM portfolio powered by MudBlazor, GitHub Pages, and CI/CD pipeline.",
         "technologies": [ "Blazor", ".NET 8", "MudBlazor", "GitHub Actions" ],
-        "link": "https://qambershah.github.io/portfolio",
+        "link": "",
         "github": "https://github.com/qambershah/portfolio"
+    },
+    {
+        "title": "Interactive Comments (React + TypeScript)",
+        "description": "A modern comment section built using React 19, Vite, and TypeScript with context and hooks. Supports nested replies, state management, and GitHub Pages deployment.",
+        "technologies": [ "React 19", "TypeScript", "Vite", "Hooks", "Context", "GitHub Pages" ],
+        "link": "https://qambershah.github.io/interactive-comments-react",
+        "github": "https://github.com/qambershah/interactive-comments-react"
     }
 ]
