@@ -2,3 +2,68 @@
 .repo-card[b-cnndr4rg2i] {
     min-height: 250px;
 }
+/* /Pages/Skills.razor.rz.scp.css */
+.logo[b-56wi8ts6hr] {
+  transition: filter 0.2s, box-shadow 0.2s;
+}
+
+/* General fallback for all logos */
+[b-56wi8ts6hr](.logo:hover) {
+  filter: drop-shadow(0 0 2em #8888);
+}
+
+/* Technology-specific hover effects */
+[b-56wi8ts6hr](.logo.typescript:hover) {
+  filter: drop-shadow(0 0 2em #3178c6);
+}
+[b-56wi8ts6hr](.logo.dotnet:hover) {
+  filter: drop-shadow(0 0 2em #5f08b0);
+}
+[b-56wi8ts6hr](.logo.aws:hover) {
+  filter: drop-shadow(0 0 2em #ff9900);
+}
+[b-56wi8ts6hr](.logo.angular:hover) {
+  filter: drop-shadow(0 0 2em #dd0031);
+}
+[b-56wi8ts6hr](.logo.blazor:hover) {
+  filter: drop-shadow(0 0 2em #512bd4);
+}
+[b-56wi8ts6hr](.logo.javascript:hover) {
+  filter: drop-shadow(0 0 2em #f7df1e);
+}
+[b-56wi8ts6hr](.logo.css:hover) {
+  filter: drop-shadow(0 0 2em #1572b6);
+}
+[b-56wi8ts6hr](.logo.sass:hover) {
+  filter: drop-shadow(0 0 2em #cc6699);
+}
+[b-56wi8ts6hr](.logo.tailwind:hover) {
+  filter: drop-shadow(0 0 2em #38bdf8);
+}
+[b-56wi8ts6hr](.logo.mudblazor:hover) {
+  filter: drop-shadow(0 0 2em #594ae2);
+}
+[b-56wi8ts6hr](.logo.html:hover) {
+  filter: drop-shadow(0 0 2em #e34f26);
+}
+[b-56wi8ts6hr](.logo.csharp:hover) {
+  filter: drop-shadow(0 0 2em #239120);
+}
+[b-56wi8ts6hr](.logo.tsql:hover) {
+  filter: drop-shadow(0 0 2em #e38c00);
+}
+[b-56wi8ts6hr](.logo.sqlserver:hover) {
+  filter: drop-shadow(0 0 2em #cc2927);
+}
+[b-56wi8ts6hr](.logo.github:hover) {
+  filter: drop-shadow(0 0 2em #181717);
+}
+[b-56wi8ts6hr](.logo.githubactions:hover) {
+  filter: drop-shadow(0 0 2em #2088ff);
+}
+[b-56wi8ts6hr](.logo.bitbucket:hover) {
+  filter: drop-shadow(0 0 2em #0052cc);
+}
+[b-56wi8ts6hr](.logo.react:hover) {
+  filter: drop-shadow(0 0 2em #61dafb);
+}
