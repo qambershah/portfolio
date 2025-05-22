@@ -15,12 +15,15 @@
         <MudGrid Class="mt-4">
             @foreach (var project in projects)
             {
-                <MudItem xs="12" sm="6" md="4">
-                    <RepoCard Title="@project.Title"
-                              Description="@project.Description"
-                              Technologies="@project.Technologies"
-                              Link="@project.Link"
-                              Github="@project.Github" />
+                <MudItem xs="12" sm="6" md="4" Style="min-width:350px;" Class="project-card">
+                    <div class="card-container">
+                        <RepoCard 
+                            Title="@project.Title"
+                            Description="@project.Description"
+                            Technologies="@project.Technologies"
+                            Link="@project.Link"
+                            Github="@project.Github" />
+                    </div>
                 </MudItem>
             }
         </MudGrid>

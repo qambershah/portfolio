@@ -1,0 +1,65 @@
+@page "/skills"
+@using MudBlazor
+<PageTitle>Skills</PageTitle>
+
+<MudContainer MaxWidth="MaxWidth.Large" Class="mt-6">
+    <MudText Typo="Typo.h4" Class="mb-4">Skills</MudText>
+    @foreach (var category in CategorizedSkills)
+    {
+        <MudText Typo="Typo.h6" Class="category-heading">@category.Key</MudText>
+        <MudGrid GutterSize="3">
+            @foreach (var skill in category.Value)
+            {
+                <MudItem xs="12" sm="6" md="4" lg="3">
+                    <MudPaper Elevation="3" Class="skill-card d-flex flex-column align-items-center pa-6" Style="background: transparent;">
+                        <MudAvatar Size="Size.Large" Class=@($"mb-2 logo {skill.CssClass}") Style="background: transparent; width: 80px; height: 80px;">
+                            <img src="@skill.Logo" alt="@skill.Name logo" style="width: 64px; height: 64px;" />
+                        </MudAvatar>
+                        <MudText Typo="Typo.subtitle1">@skill.Name</MudText>
+                    </MudPaper>
+                </MudItem>
+            }
+        </MudGrid>
+    }
+</MudContainer>
+
+@code {
+    private record Skill(string Name, string Logo, string CssClass);
+    private Dictionary<string, List<Skill>> CategorizedSkills = new()
+    {
+        ["Frontend"] = new List<Skill>
+        {
+            new("Angular", "images/skills/angular.png", "angular"),
+            new("React", "images/skills/react.svg", "react"),
+            new("Blazor", "images/skills/blazor.svg", "blazor"),
+            new("TypeScript", "images/skills/typescript.png", "typescript"),
+            new("Javascript", "images/skills/javascript.png", "javascript"),
+            new("CSS", "images/skills/css3.png", "css"),
+            new("Sass", "images/skills/sass.png", "sass"),
+            new("Tailwind", "images/skills/tailwindcss.svg", "tailwind"),
+            new("MudBlazor", "images/skills/MudBlazor.svg", "mudblazor"),
+            new("HTML", "images/skills/HTML5.png", "html")
+        },
+        ["Backend"] = new List<Skill>
+        {
+            new("C#", "images/skills/csharp.png", "csharp"),
+            new(".NET (4.x, 8+)", "images/skills/dotnet.png", "dotnet"),
+            new("T-SQL", "images/skills/sql.svg", "tsql"),
+            new("SQL Server", "images/skills/sqlserver.svg", "sqlserver")
+        },
+        ["DevOps"] = new List<Skill>
+        {
+            new("GitHub", "images/skills/github.svg", "github"),
+            new("Github Actions", "images/skills/github-actions.png", "githubactions"),
+            new("BitBucket", "images/skills/bitbucket.svg", "bitbucket"),
+            new("Docker", "images/skills/docker.svg", "docker"),
+            new("CI/CD", "images/skills/cicd.svg", "cicd")
+        },
+        ["Cloud"] = new List<Skill>
+        {
+            new("AWS", "images/skills/aws.svg", "aws"),
+            new("Azure", "images/skills/azure.svg", "azure")
+        }
+    };
+}
+

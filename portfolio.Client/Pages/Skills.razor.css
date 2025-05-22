@@ -1,0 +1,64 @@
+.logo {
+  transition: filter 0.2s, box-shadow 0.2s;
+}
+
+/* General fallback for all logos */
+::deep(.logo:hover) {
+  filter: drop-shadow(0 0 2em #8888);
+}
+
+/* Technology-specific hover effects */
+::deep(.logo.typescript:hover) {
+  filter: drop-shadow(0 0 2em #3178c6);
+}
+::deep(.logo.dotnet:hover) {
+  filter: drop-shadow(0 0 2em #5f08b0);
+}
+::deep(.logo.aws:hover) {
+  filter: drop-shadow(0 0 2em #ff9900);
+}
+::deep(.logo.angular:hover) {
+  filter: drop-shadow(0 0 2em #dd0031);
+}
+::deep(.logo.blazor:hover) {
+  filter: drop-shadow(0 0 2em #512bd4);
+}
+::deep(.logo.javascript:hover) {
+  filter: drop-shadow(0 0 2em #f7df1e);
+}
+::deep(.logo.css:hover) {
+  filter: drop-shadow(0 0 2em #1572b6);
+}
+::deep(.logo.sass:hover) {
+  filter: drop-shadow(0 0 2em #cc6699);
+}
+::deep(.logo.tailwind:hover) {
+  filter: drop-shadow(0 0 2em #38bdf8);
+}
+::deep(.logo.mudblazor:hover) {
+  filter: drop-shadow(0 0 2em #594ae2);
+}
+::deep(.logo.html:hover) {
+  filter: drop-shadow(0 0 2em #e34f26);
+}
+::deep(.logo.csharp:hover) {
+  filter: drop-shadow(0 0 2em #239120);
+}
+::deep(.logo.tsql:hover) {
+  filter: drop-shadow(0 0 2em #e38c00);
+}
+::deep(.logo.sqlserver:hover) {
+  filter: drop-shadow(0 0 2em #cc2927);
+}
+::deep(.logo.github:hover) {
+  filter: drop-shadow(0 0 2em #181717);
+}
+::deep(.logo.githubactions:hover) {
+  filter: drop-shadow(0 0 2em #2088ff);
+}
+::deep(.logo.bitbucket:hover) {
+  filter: drop-shadow(0 0 2em #0052cc);
+}
+::deep(.logo.react:hover) {
+  filter: drop-shadow(0 0 2em #61dafb);
+}
