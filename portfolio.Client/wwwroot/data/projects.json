@@ -7,9 +7,19 @@
         "github": "https://github.com/qambershah/portfolio"
     },
     {
-        "title": "Interactive Comments (React + TypeScript)",
-        "description": "A modern comment section built using React 19, Vite, and TypeScript with context and hooks. Supports nested replies, state management, and GitHub Pages deployment.",
-        "technologies": [ "React 19", "TypeScript", "Vite", "Hooks", "Context", "GitHub Pages" ],
+        "title": "Interactive Comments (React + .NET + AWS)",
+        "description": "A full-stack interactive comment system using React 19, TypeScript, and Vite for the frontend, with a .NET 8 Web API hosted on AWS Lambda and integrated via API Gateway. Features nested replies, voting, real-time updates, rate limiting, and public GitHub Pages deployment. Currently using in-memory storage seeded from JSON, with future plans for DynamoDB integration, email notifications (SNS/SES), and CI/CD for Lambda.",
+        "technologies": [
+            "React 19",
+            "TypeScript",
+            "Vite",
+            ".NET 8",
+            "AWS Lambda",
+            "API Gateway",
+            "CORS",
+            "CI/CD",
+            "GitHub Pages"
+        ],
         "link": "https://qambershah.github.io/interactive-comments-react",
         "github": "https://github.com/qambershah/interactive-comments-react"
     }
