@@ -136,6 +136,10 @@
     var(--mud-palette-surface);
 }
 
+.hero-grid {
+  align-items: center;
+}
+
 .eyebrow,
 .project-kind,
 .panel-label {
