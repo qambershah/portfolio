@@ -7,9 +7,6 @@
 <MudLayout>
     <MudAppBar Elevation="1">
         <MudIconButton Icon="@Icons.Material.Filled.Menu" Color="Color.Inherit" Edge="Edge.Start" OnClick="@((e) => DrawerToggle())" />
-        <MudAvatar Variant="Variant.Outlined" Color="Color.Dark">
-            <MudImage Src="images/logo.PNG" Alt="logo of Qamber Abbas" />
-        </MudAvatar>
         <MudText Typo="Typo.h5" Class="ml-3">Qamber Abbas</MudText>
         <MudSpacer />
         <MudIconButton Icon="@(DarkLightModeButtonIcon)" Color="Color.Inherit" OnClick="@DarkModeToggle" />
@@ -95,5 +92,4 @@
         false => Icons.Material.Outlined.DarkMode,
     };
 }
-
 
