@@ -1,50 +1,33 @@
-# 🧑‍💻 Portfolio Site
+# Portfolio
 
-This is a professional portfolio site built using **Blazor WebAssembly** with **MudBlazor** for UI components. It's deployed via **GitHub Pages** using a custom **CI/CD pipeline** powered by **GitHub Actions**.
+A personal portfolio built with Blazor WebAssembly and MudBlazor. The site has a home page, a project list loaded from JSON, and a skills page. It is published on GitHub Pages.
 
-## 🚀 Features
+## Run locally
 
-- **Blazor WebAssembly** frontend
-- **MudBlazor** component library for modern UI/UX
-- Responsive layout with dark/light theme support
-- Project showcase powered by `projects.json`
-- Hosted on **GitHub Pages**
-- Automated deployments with GitHub Actions
+Install the .NET 10 SDK, then run the client project:
 
-## 🔗 Live Site
-
-👉 [https://qambershah.github.io/portfolio](https://qambershah.github.io/portfolio)
-
-## 🧰 Tech Stack
-
-- **Blazor WASM (.NET 8)**
-- **MudBlazor**
-- **GitHub Pages**
-- **GitHub Actions (CI/CD)**
-
-## 📂 Project Structure
-
-```text
-portfolio/
-├── portfolio.Client         # Blazor WASM frontend using MudBlazor
-├── portfolio                # Blazor Server host (entry point for dev/deploy)
-├── wwwroot/                 # Static assets served by the client project
-├── .github/workflows/       # GitHub Actions for automated CI/CD
-├── projects.json            # Dynamic content source for project listings
-└── README.md                # Project documentation
+```sh
+dotnet run --project portfolio.Client
 ```
 
-## 🧪 Local Development
+Open the local URL printed by `dotnet run`.
 
-```bash
-dotnet run --project portfolio
+## Checks
+
+Run the portfolio tests and build from the repository root:
+
+```sh
+dotnet test portfolio.sln --configuration Release
 ```
 
-## 📦 Deployment
+## Update the project list
 
-This project is deployed automatically using a GitHub Actions workflow located in `.github/workflows/`. 
-Any changes pushed to the `main` branch will trigger a deployment to GitHub Pages.
+Edit [`portfolio.Client/wwwroot/data/projects.json`](portfolio.Client/wwwroot/data/projects.json). Each entry supports a title, description, technology list, demo link, and source repository link. Leave a link empty when that destination is not available.
 
-## 🧾 License
+## Deployment
+
+The site is hosted at [qambershah.github.io/portfolio](https://qambershah.github.io/portfolio). Pull requests targeting `main` run the portfolio tests and build with .NET 10. After changes are merged, GitHub Actions reruns the tests, publishes the Blazor WebAssembly output, and deploys it to GitHub Pages. Set the repository's Pages publishing source to **GitHub Actions**.
+
+## License
 
 MIT

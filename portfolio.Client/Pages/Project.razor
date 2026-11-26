@@ -6,16 +6,26 @@
 <MudContainer MaxWidth="MaxWidth.Large">
     <MudText Typo="Typo.h4" Class="mt-2" GutterBottom="true">Projects</MudText>
 
-    @if (projects == null)
+    @if (isLoading)
     {
         <MudProgressCircular Indeterminate="true" />
+    }
+    else if (loadError is not null)
+    {
+        <MudAlert Severity="Severity.Error" Variant="Variant.Outlined" Class="mt-4">
+            @loadError
+        </MudAlert>
+    }
+    else if (projects is null || projects.Count == 0)
+    {
+        <MudText Class="mt-4">There are no projects to display yet.</MudText>
     }
     else
     {
         <MudGrid Class="mt-4">
             @foreach (var project in projects)
             {
-                <MudItem xs="12" sm="6" md="4" Style="min-width:350px;" Class="project-card">
+                <MudItem xs="12" sm="6" md="4" Class="project-card">
                     <div class="card-container">
                         <RepoCard 
                             Title="@project.Title"
@@ -31,19 +41,36 @@
 </MudContainer>
 
 @code {
-    private List<ProjectModel> projects;
+    private List<ProjectModel>? projects;
+    private bool isLoading = true;
+    private string? loadError;
 
     protected override async Task OnInitializedAsync()
     {
-        projects = await Http.GetFromJsonAsync<List<ProjectModel>>("data/projects.json");
+        try
+        {
+            projects = await Http.GetFromJsonAsync<List<ProjectModel>>("data/projects.json");
+        }
+        catch (HttpRequestException)
+        {
+            loadError = "Projects could not be loaded. Please refresh the page to try again.";
+        }
+        catch (System.Text.Json.JsonException)
+        {
+            loadError = "The project list is temporarily unavailable because its data could not be read.";
+        }
+        finally
+        {
+            isLoading = false;
+        }
     }
 
     public class ProjectModel
     {
-        public string Title { get; set; }
-        public string Description { get; set; }
-        public List<string> Technologies { get; set; }
-        public string Link { get; set; }
-        public string Github { get; set; }
+        public string Title { get; set; } = string.Empty;
+        public string Description { get; set; } = string.Empty;
+        public List<string> Technologies { get; set; } = new();
+        public string Link { get; set; } = string.Empty;
+        public string Github { get; set; } = string.Empty;
     }
 }
