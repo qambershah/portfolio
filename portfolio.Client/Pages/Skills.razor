@@ -1,64 +1,62 @@
-@page "/skills"
-@using MudBlazor
-<PageTitle>Skills</PageTitle>
+﻿@page "/skills"
+<PageTitle>Engineering approach</PageTitle>
 
-<MudContainer MaxWidth="MaxWidth.Large" Class="mt-6">
-    <MudText Typo="Typo.h4" Class="mb-4">Skills</MudText>
-    @foreach (var category in CategorizedSkills)
-    {
-        <MudText Typo="Typo.h6" Class="category-heading">@category.Key</MudText>
-        <MudGrid Spacing="3">
-            @foreach (var skill in category.Value)
+<MudContainer MaxWidth="MaxWidth.Large" Class="home-shell engineering-page">
+    <MudText Typo="Typo.overline" Class="eyebrow">How I work</MudText>
+    <MudText Typo="Typo.h3" Class="engineering-title">Engineering approach</MudText>
+    <MudText Typo="Typo.body1" Class="engineering-intro">
+        I try to make implementation choices clear, testable, and proportionate to the problem.
+        These are the practices I am applying in the projects shown here.
+    </MudText>
+
+    <MudGrid Spacing="3" Class="engineering-grid">
+        <MudItem xs="12" md="4">
+            <MudPaper Elevation="0" Outlined="true" Class="principle-card pa-5">
+                <MudIcon Icon="@Icons.Material.Filled.AccountTree" Color="Color.Primary" Size="Size.Large" aria-hidden="true" />
+                <MudText Typo="Typo.h6" Class="principle-title">Keep boundaries clear</MudText>
+                <MudText Typo="Typo.body2" Class="principle-copy">
+                    Separate the user interface, API, and deployment responsibilities so each part has a clear job.
+                </MudText>
+            </MudPaper>
+        </MudItem>
+        <MudItem xs="12" md="4">
+            <MudPaper Elevation="0" Outlined="true" Class="principle-card pa-5">
+                <MudIcon Icon="@Icons.Material.Filled.Rule" Color="Color.Primary" Size="Size.Large" aria-hidden="true" />
+                <MudText Typo="Typo.h6" Class="principle-title">Test behavior that matters</MudText>
+                <MudText Typo="Typo.body2" Class="principle-copy">
+                    Use focused tests and automated checks to make changes safer to review and release.
+                </MudText>
+            </MudPaper>
+        </MudItem>
+        <MudItem xs="12" md="4">
+            <MudPaper Elevation="0" Outlined="true" Class="principle-card pa-5">
+                <MudIcon Icon="@Icons.Material.Filled.Savings" Color="Color.Primary" Size="Size.Large" aria-hidden="true" />
+                <MudText Typo="Typo.h6" Class="principle-title">Match cost to need</MudText>
+                <MudText Typo="Typo.body2" Class="principle-copy">
+                    Keep the current demos on free hosting and state their limitations before adding services with ongoing cost.
+                </MudText>
+            </MudPaper>
+        </MudItem>
+    </MudGrid>
+
+    <MudPaper Elevation="0" Outlined="true" Class="stack-panel pa-5 pa-md-6">
+        <MudText Typo="Typo.h6" Class="principle-title">Tools used in the featured projects</MudText>
+        <MudText Typo="Typo.body2" Class="principle-copy mb-3">
+            The tools below are demonstrated in the repositories linked from this portfolio.
+        </MudText>
+        <div class="stack-chips" aria-label="Technologies used in featured projects">
+            @foreach (var technology in Technologies)
             {
-                <MudItem xs="12" sm="6" md="4" lg="3">
-                    <MudPaper Elevation="3" Class="skill-card d-flex flex-column align-items-center pa-6" Style="background: transparent;">
-                        <MudAvatar Size="Size.Large" Class=@($"mb-2 logo {skill.CssClass}") Style="background: transparent; width: 80px; height: 80px;">
-                            <img src="@skill.Logo" alt="@skill.Name logo" style="width: 64px; height: 64px;" />
-                        </MudAvatar>
-                        <MudText Typo="Typo.subtitle1">@skill.Name</MudText>
-                    </MudPaper>
-                </MudItem>
+                <MudChip T="string" Color="Color.Default" Variant="Variant.Outlined">@technology</MudChip>
             }
-        </MudGrid>
-    }
+        </div>
+    </MudPaper>
 </MudContainer>
 
 @code {
-    private record Skill(string Name, string Logo, string CssClass);
-    private Dictionary<string, List<Skill>> CategorizedSkills = new()
-    {
-        ["Frontend"] = new List<Skill>
-        {
-            new("Angular", "images/skills/angular.png", "angular"),
-            new("React", "images/skills/react.svg", "react"),
-            new("Blazor", "images/skills/blazor.svg", "blazor"),
-            new("TypeScript", "images/skills/typescript.png", "typescript"),
-            new("Javascript", "images/skills/javascript.png", "javascript"),
-            new("CSS", "images/skills/css3.png", "css"),
-            new("Sass", "images/skills/sass.png", "sass"),
-            new("Tailwind", "images/skills/tailwindcss.svg", "tailwind"),
-            new("MudBlazor", "images/skills/MudBlazor.svg", "mudblazor"),
-            new("HTML", "images/skills/HTML5.png", "html")
-        },
-        ["Backend"] = new List<Skill>
-        {
-            new("C#", "images/skills/csharp.png", "csharp"),
-            new(".NET (4.x, 8+)", "images/skills/dotnet.png", "dotnet"),
-            new("T-SQL", "images/skills/sql.svg", "tsql"),
-            new("SQL Server", "images/skills/sqlserver.svg", "sqlserver")
-        },
-        ["DevOps"] = new List<Skill>
-        {
-            new("GitHub", "images/skills/github.svg", "github"),
-            new("Github Actions", "images/skills/github-actions.png", "githubactions"),
-            new("BitBucket", "images/skills/bitbucket.svg", "bitbucket"),
-            new("Docker", "images/skills/docker.svg", "docker"),
-            new("CI/CD", "images/skills/cicd.svg", "cicd")
-        },
-        ["Cloud"] = new List<Skill>
-        {
-            new("AWS", "images/skills/aws.svg", "aws"),
-            new("Azure", "images/skills/azure.svg", "azure")
-        }
-    };
+    private static readonly string[] Technologies =
+    [
+        "C#", ".NET 10", "ASP.NET Core", "React", "TypeScript", "Vite",
+        "Blazor WebAssembly", "AWS Lambda", "API Gateway", "GitHub Actions", "Vitest", "xUnit"
+    ];
 }

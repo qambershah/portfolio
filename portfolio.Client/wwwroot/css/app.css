@@ -120,3 +120,221 @@
     padding-right: 12px !important;
   }
 }
+
+.home-shell {
+  max-width: 1160px;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.hero-panel {
+  overflow: hidden;
+  border: 1px solid var(--mud-palette-lines-default);
+  border-radius: 1.5rem;
+  background:
+    radial-gradient(ellipse at 92% 0%, rgba(88, 166, 255, 0.12), transparent 38%),
+    var(--mud-palette-surface);
+}
+
+.eyebrow,
+.project-kind,
+.panel-label {
+  color: var(--mud-palette-primary);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.hero-title {
+  margin-top: 0.4rem;
+  font-weight: 750;
+  letter-spacing: -0.045em;
+}
+
+.hero-subtitle {
+  max-width: 36rem;
+  margin-top: 1rem;
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+.hero-copy {
+  max-width: 42rem;
+  margin-top: 1rem;
+  color: var(--mud-palette-text-secondary);
+  line-height: 1.75;
+}
+
+.hero-actions,
+.work-links {
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.focus-panel {
+  height: 100%;
+  border-radius: 1rem;
+  background-color: rgba(127, 127, 127, 0.055);
+}
+
+.focus-list {
+  padding-top: 0.4rem;
+}
+
+.focus-list .mud-list-item {
+  min-height: 3rem;
+  padding-inline: 0;
+}
+
+.focus-note,
+.tradeoff-note {
+  color: var(--mud-palette-text-secondary);
+  line-height: 1.65;
+}
+
+.portfolio-section {
+  margin-top: 3.5rem;
+}
+
+.section-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.section-heading h4 {
+  font-weight: 700;
+  letter-spacing: -0.025em;
+}
+
+.work-card {
+  height: 100%;
+  border-radius: 1.1rem;
+  background-color: var(--mud-palette-surface);
+}
+
+.work-card-primary {
+  background:
+    linear-gradient(145deg, rgba(88, 166, 255, 0.08), transparent 62%),
+    var(--mud-palette-surface);
+}
+
+.work-title {
+  margin-top: 0.2rem;
+  font-weight: 700;
+}
+
+.work-description {
+  margin-top: 0.85rem;
+  color: var(--mud-palette-text-secondary);
+  line-height: 1.7;
+}
+
+.architecture-flow {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1.4rem;
+  color: var(--mud-palette-primary);
+  font-size: 0.82rem;
+  font-weight: 650;
+}
+
+.architecture-flow span {
+  padding: 0.45rem 0.65rem;
+  border: 1px solid var(--mud-palette-lines-default);
+  border-radius: 0.55rem;
+  background-color: var(--mud-palette-background);
+}
+
+.architecture-flow .mud-icon-root {
+  width: 1rem;
+  height: 1rem;
+}
+
+.tradeoff-note {
+  margin-top: 1rem;
+  padding-left: 0.8rem;
+  border-left: 2px solid var(--mud-palette-primary);
+  font-size: 0.875rem;
+}
+
+.contact-strip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.1rem 0;
+  border-top: 1px solid var(--mud-palette-lines-default);
+}
+
+.engineering-page {
+  max-width: 1160px;
+}
+
+.engineering-title {
+  margin-top: 0.3rem;
+  font-weight: 700;
+  letter-spacing: -0.035em;
+}
+
+.engineering-intro {
+  max-width: 48rem;
+  margin-top: 0.8rem;
+  color: var(--mud-palette-text-secondary);
+  line-height: 1.75;
+}
+
+.engineering-grid {
+  margin-top: 1.2rem;
+}
+
+.principle-card {
+  height: 100%;
+  border-radius: 1rem;
+  background-color: var(--mud-palette-surface);
+}
+
+.principle-title {
+  margin-top: 1rem;
+  font-weight: 700;
+}
+
+.principle-copy {
+  margin-top: 0.65rem;
+  color: var(--mud-palette-text-secondary);
+  line-height: 1.7;
+}
+
+.stack-panel {
+  margin-top: 2rem;
+  border-radius: 1rem;
+}
+
+.stack-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+@media (max-width: 600px) {
+  .home-shell {
+    padding-top: 0.75rem;
+  }
+
+  .hero-title {
+    font-size: 2.35rem;
+  }
+
+  .section-heading,
+  .contact-strip {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .portfolio-section {
+    margin-top: 2.5rem;
+  }
+}
