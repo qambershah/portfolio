@@ -7,7 +7,7 @@
     @foreach (var category in CategorizedSkills)
     {
         <MudText Typo="Typo.h6" Class="category-heading">@category.Key</MudText>
-        <MudGrid GutterSize="3">
+        <MudGrid Spacing="3">
             @foreach (var skill in category.Value)
             {
                 <MudItem xs="12" sm="6" md="4" lg="3">
@@ -62,4 +62,3 @@
         }
     };
 }
-

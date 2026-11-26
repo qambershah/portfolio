@@ -26,7 +26,7 @@
         <div class="d-flex flex-wrap gap-1 mt-2">
             @foreach (var tech in Technologies)
             {
-                <MudChip T="string" Color="Color.Dark" DisableRipple="true" Variant="Variant.Filled">
+            <MudChip T="string" Color="Color.Dark" Variant="Variant.Filled">
                     @tech
                 </MudChip>
             }
@@ -36,9 +36,9 @@
 
 
 @code {
-    [Parameter] public string Title { get; set; }
-    [Parameter] public string Description { get; set; }
-    [Parameter] public List<string> Technologies { get; set; }
-    [Parameter] public string Link { get; set; }
-    [Parameter] public string Github { get; set; }
+    [Parameter] public string Title { get; set; } = string.Empty;
+    [Parameter] public string Description { get; set; } = string.Empty;
+    [Parameter] public List<string> Technologies { get; set; } = new();
+    [Parameter] public string Link { get; set; } = string.Empty;
+    [Parameter] public string Github { get; set; } = string.Empty;
 }

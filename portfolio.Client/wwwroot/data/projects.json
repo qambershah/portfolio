@@ -8,7 +8,7 @@
     },
     {
         "title": "Interactive Comments (React + .NET + AWS)",
-        "description": "A full-stack interactive comment system using React 19, TypeScript, and Vite for the frontend, with a .NET 8 Web API hosted on AWS Lambda and integrated via API Gateway. Features nested replies, voting, real-time updates, rate limiting, and public GitHub Pages deployment. Currently using in-memory storage seeded from JSON, with future plans for DynamoDB integration, email notifications (SNS/SES), and CI/CD for Lambda.",
+        "description": "A threaded comment demo with a React and TypeScript frontend and an ASP.NET Core API. It supports replies, editing, deletion, and voting. The API uses in-memory storage, so comments may reset when its process restarts; the GitHub Pages frontend and API are deployed separately.",
         "technologies": [
             "React 19",
             "TypeScript",
