@@ -1,55 +1,122 @@
 ﻿@page "/"
-<PageTitle>Welcome</PageTitle>
+<PageTitle>Qamber Abbas | Software Engineer</PageTitle>
 
-<MudContainer MaxWidth="MaxWidth.Large" Class="mt-6">
+<MudContainer MaxWidth="MaxWidth.Large" Class="home-shell">
+    <MudPaper Elevation="0" Class="hero-panel pa-6 pa-md-10">
+        <MudGrid AlignItems="AlignItems.Center" Spacing="6">
+            <MudItem xs="12" md="8">
+                <MudText Class="eyebrow">Software engineer · .NET · React · AWS</MudText>
+                <MudText Typo="Typo.h2" Class="hero-title">Qamber Abbas</MudText>
+                <MudText Typo="Typo.h5" Class="hero-subtitle">
+                    I build end-to-end software, from service boundaries to the interface people use.
+                </MudText>
+                <MudText Typo="Typo.body1" Class="hero-copy">
+                    My recent work combines C#, ASP.NET Core, React, and TypeScript. I focus on clear design,
+                    meaningful tests, and delivery choices that fit the product rather than adding infrastructure for its own sake.
+                </MudText>
 
-    <!-- Profile Section -->
-    <MudPaper Elevation="1" Class="profile-card d-flex flex-column align-items-start mb-6 pa-4">
+                <MudStack Row="true" Spacing="2" Class="hero-actions">
+                    <MudButton Variant="Variant.Filled" Color="Color.Primary" Href="projects" EndIcon="@Icons.Material.Filled.ArrowForward">
+                        Explore selected work
+                    </MudButton>
+                    <MudButton Variant="Variant.Outlined" Color="Color.Primary" Href="mailto:qamber9abbas@gmail.com">
+                        Get in touch
+                    </MudButton>
+                </MudStack>
+            </MudItem>
 
-        <MudStack Row="true" AlignItems="AlignItems.Center" Spacing="2" Class="mb-4">
-            <MudAvatar Size="Size.Large">
-                <MudImage Src="images/avatar.jpeg" Alt="An image of my avatar!"></MudImage>
-            </MudAvatar>
-
-            <MudStack Spacing="0">
-                <MudText Typo="Typo.h4">Qamber Abbas</MudText>
-                <MudText Typo="Typo.subtitle1" Class="text-muted">Fullstack Developer</MudText>
-            </MudStack>
-        </MudStack>
-
-        <MudText Typo="Typo.body1" Class="mb-3">
-            I’m a full-stack developer working with C#, .NET, React, and TypeScript. I use this portfolio to share projects and the tools behind them.
-        </MudText>
-
-        <MudText Typo="Typo.body1" Class="mb-3">
-            My projects include a Blazor portfolio and a threaded comments app with a React frontend and .NET API.
-        </MudText>
-
-        <MudButton Variant="Variant.Filled" Color="Color.Primary" Href="projects" Class="mb-4">
-            View projects
-        </MudButton>
-
-        <!-- Contact Buttons -->
-        <MudStack Row="true" Spacing="2" Class="mb-2">
-            <MudButton Variant="Variant.Outlined" Color="Color.Primary" StartIcon="@Icons.Material.Filled.Email" Href="mailto:qamber9abbas@gmail.com" Target="_blank">
-                Email Me
-            </MudButton>
-            <MudButton Variant="Variant.Outlined" Color="Color.Secondary" StartIcon="@Icons.Custom.Brands.GitHub" Href="https://github.com/qambershah" Target="_blank">
-                GitHub
-            </MudButton>
-            <MudButton Variant="Variant.Outlined" Color="Color.Info" StartIcon="@Icons.Custom.Brands.LinkedIn" Href="https://linkedin.com/in/qamber9abbas" Target="_blank">
-                LinkedIn
-            </MudButton>
-        </MudStack>
-
-        @* <MudButton Variant="Variant.Filled" Color="Color.Success" Href="files/QamberShah_Resume.pdf" Target="_blank" StartIcon="@Icons.Material.Filled.Download">
-            Download Resume
-        </MudButton> *@
+            <MudItem xs="12" md="4">
+                <MudPaper Elevation="0" Outlined="true" Class="focus-panel pa-5">
+                    <MudText Typo="Typo.overline" Class="panel-label">Engineering focus</MudText>
+                    <MudList T="string" Dense="true" Class="focus-list">
+                        <MudListItem Icon="@Icons.Material.Filled.AccountTree">Clear application and API boundaries</MudListItem>
+                        <MudListItem Icon="@Icons.Material.Filled.VerifiedUser">Tests that protect important behavior</MudListItem>
+                        <MudListItem Icon="@Icons.Material.Filled.CloudQueue">Cost-aware cloud delivery</MudListItem>
+                    </MudList>
+                    <MudDivider Class="my-3" />
+                    <MudText Typo="Typo.body2" Class="focus-note">
+                        I like making the trade-offs visible: what a system guarantees, what it does not, and why.
+                    </MudText>
+                </MudPaper>
+            </MudItem>
+        </MudGrid>
     </MudPaper>
 
-    <!-- Footer -->
-    <MudText Typo="Typo.caption" Class="text-muted mt-4">
-        💡 Built with Blazor WebAssembly + MudBlazor, powered by GitHub Actions and deployed on GitHub Pages.
-    </MudText>
+    <section class="portfolio-section" aria-labelledby="featured-work-heading">
+        <div class="section-heading">
+            <div>
+                <MudText Typo="Typo.overline" Class="eyebrow">Recent work</MudText>
+                <MudText Typo="Typo.h4" id="featured-work-heading">Selected projects</MudText>
+            </div>
+            <MudButton Variant="Variant.Text" Color="Color.Primary" Href="projects" EndIcon="@Icons.Material.Filled.ArrowForward">
+                All project details
+            </MudButton>
+        </div>
 
+        <MudGrid Spacing="3">
+            <MudItem xs="12" md="7">
+                <MudPaper Elevation="0" Outlined="true" Class="work-card work-card-primary pa-5 pa-md-6">
+                    <MudText Typo="Typo.overline" Class="project-kind">Full-stack product · React + .NET</MudText>
+                    <MudText Typo="Typo.h5" Class="work-title">Interactive Comments</MudText>
+                    <MudText Typo="Typo.body1" Class="work-description">
+                        A threaded discussion app with nested replies, editing, deletion, and voting. The frontend keeps
+                        the thread responsive after each change while an ASP.NET Core API handles comment operations.
+                    </MudText>
+
+                    <div class="architecture-flow" aria-label="Application flow: React and TypeScript frontend, API Gateway, .NET API on AWS Lambda">
+                        <span>React + TypeScript</span>
+                        <MudIcon Icon="@Icons.Material.Filled.ArrowForward" aria-hidden="true" />
+                        <span>API Gateway</span>
+                        <MudIcon Icon="@Icons.Material.Filled.ArrowForward" aria-hidden="true" />
+                        <span>.NET on Lambda</span>
+                    </div>
+
+                    <MudText Typo="Typo.body2" Class="tradeoff-note">
+                        Current constraint: comments use in-memory storage, keeping the demo free to run. Data can reset when the API restarts.
+                    </MudText>
+
+                    <MudStack Row="true" Spacing="2" Class="work-links">
+                        <MudButton Variant="Variant.Filled" Color="Color.Primary" Href="https://qambershah.github.io/interactive-comments-react/" Target="_blank">
+                            Live demo
+                        </MudButton>
+                        <MudButton Variant="Variant.Outlined" Color="Color.Primary" Href="https://github.com/qambershah/interactive-comments-react" Target="_blank">
+                            Source code
+                        </MudButton>
+                    </MudStack>
+                </MudPaper>
+            </MudItem>
+
+            <MudItem xs="12" md="5">
+                <MudPaper Elevation="0" Outlined="true" Class="work-card pa-5 pa-md-6">
+                    <MudText Typo="Typo.overline" Class="project-kind">Personal site · Blazor</MudText>
+                    <MudText Typo="Typo.h5" Class="work-title">This portfolio</MudText>
+                    <MudText Typo="Typo.body1" Class="work-description">
+                        A Blazor WebAssembly site on .NET 10. Project data is kept separate from the UI, tests cover its loading behavior,
+                        and GitHub Actions builds and publishes the site.
+                    </MudText>
+
+                    <MudStack Row="true" Spacing="2" Class="work-links">
+                        <MudButton Variant="Variant.Outlined" Color="Color.Primary" Href="https://github.com/qambershah/portfolio" Target="_blank">
+                            Source code
+                        </MudButton>
+                    </MudStack>
+                </MudPaper>
+            </MudItem>
+        </MudGrid>
+    </section>
+
+    <section class="portfolio-section contact-strip" aria-label="Professional links">
+        <MudText Typo="Typo.body2">Interested in how I approach software design and delivery?</MudText>
+        <MudStack Row="true" Spacing="1">
+            <MudButton Variant="Variant.Text" Color="Color.Primary" Href="https://github.com/qambershah" Target="_blank" StartIcon="@Icons.Custom.Brands.GitHub">
+                GitHub
+            </MudButton>
+            <MudButton Variant="Variant.Text" Color="Color.Primary" Href="https://linkedin.com/in/qamber9abbas" Target="_blank" StartIcon="@Icons.Custom.Brands.LinkedIn">
+                LinkedIn
+            </MudButton>
+            <MudButton Variant="Variant.Text" Color="Color.Primary" Href="mailto:qamber9abbas@gmail.com" StartIcon="@Icons.Material.Filled.Email">
+                Email
+            </MudButton>
+        </MudStack>
+    </section>
 </MudContainer>

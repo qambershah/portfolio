@@ -1,10 +1,13 @@
 ﻿@page "/projects"
 @inject HttpClient Http
 
-<PageTitle>Projects</PageTitle>
+<PageTitle>Project details</PageTitle>
 
 <MudContainer MaxWidth="MaxWidth.Large">
-    <MudText Typo="Typo.h4" Class="mt-2" GutterBottom="true">Projects</MudText>
+    <MudText Typo="Typo.h4" Class="mt-2" GutterBottom="true">Project details</MudText>
+    <MudText Typo="Typo.body1" Class="text-secondary">
+        What I built, how the pieces fit together, and the constraints behind each project.
+    </MudText>
 
     @if (isLoading)
     {

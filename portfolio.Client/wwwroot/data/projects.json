@@ -1,9 +1,9 @@
 ﻿[
     {
-        "title": "Portfolio Site",
-        "description": "Blazor WASM portfolio powered by MudBlazor, GitHub Pages, and CI/CD pipeline.",
-        "technologies": [ "Blazor", ".NET 8", "MudBlazor", "GitHub Actions" ],
-        "link": "",
+        "title": "Portfolio",
+        "description": "A Blazor WebAssembly site on .NET 10. Project data is separate from the UI, tests cover loading behavior, and GitHub Actions deploys the published site to GitHub Pages.",
+        "technologies": [ "Blazor WebAssembly", ".NET 10", "MudBlazor", "GitHub Actions" ],
+        "link": "https://qambershah.github.io/portfolio/",
         "github": "https://github.com/qambershah/portfolio"
     },
     {
@@ -12,13 +12,11 @@
         "technologies": [
             "React 19",
             "TypeScript",
-            "Vite",
-            ".NET 8",
+            "Vite 8",
+            "ASP.NET Core / .NET 10",
             "AWS Lambda",
             "API Gateway",
-            "CORS",
-            "CI/CD",
-            "GitHub Pages"
+            "GitHub Actions"
         ],
         "link": "https://qambershah.github.io/interactive-comments-react",
         "github": "https://github.com/qambershah/interactive-comments-react"
