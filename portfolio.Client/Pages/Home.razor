@@ -42,6 +42,29 @@
         </MudGrid>
     </MudPaper>
 
+    <section class="portfolio-section" aria-labelledby="experience-heading">
+        <MudText Typo="Typo.overline" Class="eyebrow">Experience</MudText>
+        <MudText Typo="Typo.h4" id="experience-heading" Class="mb-4">Where I have worked</MudText>
+        <div class="experience-list">
+            @foreach (var role in Roles)
+            {
+                <MudPaper Elevation="0" Outlined="true" Class="experience-item pa-4 pa-md-5">
+                    <div class="experience-header">
+                        <div>
+                            <MudText Typo="Typo.h6">@role.Title</MudText>
+                            <MudText Typo="Typo.body1">@role.Company</MudText>
+                        </div>
+                        <MudText Typo="Typo.body2" Class="experience-dates">@role.Dates</MudText>
+                    </div>
+                    @if (!string.IsNullOrEmpty(role.Summary))
+                    {
+                        <MudText Typo="Typo.body2" Class="experience-summary">@role.Summary</MudText>
+                    }
+                </MudPaper>
+            }
+        </div>
+    </section>
+
     <section class="portfolio-section" aria-labelledby="featured-work-heading">
         <div class="section-heading">
             <div>
@@ -120,3 +143,19 @@
         </MudStack>
     </section>
 </MudContainer>
+
+@code {
+    private sealed record Role(string Title, string Company, string Dates, string? Summary = null);
+
+    // Summaries are deliberately short and factual; fill in measured outcomes where they can be shared.
+    private static readonly Role[] Roles =
+    [
+        new("Software Engineer", "Netwealth", "Jul 2025 – present",
+            "C# and .NET services in a wealth-management platform's reporting domain."),
+        new("Full Stack Developer", "A.G. Coombs", "Aug 2024 – Feb 2025",
+            "Built an internal eProcurement application with Blazor Server, .NET, EF Core and SQL Server, and migrated .NET Framework APIs to .NET 6."),
+        new("Full Stack Developer (contract)", "Cancer Council Victoria", "Jan 2023 – Jan 2024"),
+        new("Software Engineer", "Inzenius", "Oct 2018 – Jan 2023"),
+        new("Software Engineer (internship)", "OnePassport", "Feb 2018 – May 2018"),
+    ];
+}

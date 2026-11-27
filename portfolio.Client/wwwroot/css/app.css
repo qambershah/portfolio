@@ -342,3 +342,8 @@
     margin-top: 2.5rem;
   }
 }
+
+.experience-list { display: grid; gap: 12px; }
+.experience-header { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; align-items: baseline; }
+.experience-dates { opacity: 0.75; white-space: nowrap; }
+.experience-summary { margin-top: 8px; }
