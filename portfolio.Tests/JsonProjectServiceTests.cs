@@ -9,7 +9,8 @@ public class JsonProjectServiceTests
     public async Task GetProjectsAsync_DeserializesProjectList()
     {
         using var http = CreateClient("""
-            [{"title":"Demo","description":"Description","repoUrl":"https://github.com/example/demo"}]
+            [{"title":"Demo","description":"Description","technologies":["C#","React"],
+              "link":"https://example.com/demo","github":"https://github.com/example/demo","note":"In memory"}]
             """);
         var service = new JsonProjectService(http);
 
@@ -18,7 +19,27 @@ public class JsonProjectServiceTests
         var project = Assert.Single(projects);
         Assert.Equal("Demo", project.Title);
         Assert.Equal("Description", project.Description);
-        Assert.Equal("https://github.com/example/demo", project.RepoUrl);
+        Assert.Equal(["C#", "React"], project.Technologies);
+        Assert.Equal("https://example.com/demo", project.Link);
+        Assert.Equal("https://github.com/example/demo", project.Github);
+        Assert.Equal("In memory", project.Note);
+    }
+
+    [Fact]
+    public async Task GetProjectsAsync_ReadsTheShippedProjectsFile()
+    {
+        var path = Path.Combine(AppContext.BaseDirectory, "projects.json");
+        using var http = CreateClient(File.ReadAllText(path));
+        var service = new JsonProjectService(http);
+
+        var projects = await service.GetProjectsAsync();
+
+        Assert.NotEmpty(projects);
+        Assert.All(projects, p =>
+        {
+            Assert.False(string.IsNullOrWhiteSpace(p.Title));
+            Assert.False(string.IsNullOrWhiteSpace(p.Github));
+        });
     }
 
     [Fact]
