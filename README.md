@@ -1,6 +1,6 @@
 # Portfolio
 
-A personal portfolio built with Blazor WebAssembly and MudBlazor. The site has a home page, a project list loaded from JSON, and a skills page. It is published on GitHub Pages.
+A personal portfolio built with Blazor WebAssembly on .NET 10. It is a single page with an introduction, work experience, and a project list loaded from JSON. It is published on GitHub Pages.
 
 ## Run locally
 
